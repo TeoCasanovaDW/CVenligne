@@ -1,0 +1,16 @@
+nav ul li{
+	word-wrap: break-word;
+}
+
+#portfolio{
+	height: 1800px;
+}
+
+.containerpf{
+	height: 600px;
+	flex-direction: column;
+}
+
+.sousElements{
+	width: 100%;
+}

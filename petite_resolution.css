@@ -1,0 +1,76 @@
+.allInfosOnMe ul li{
+	font-size: 0.75em;
+}
+
+.allInfosOnMe div h2{
+	font-size: 1.2em;
+}
+
+
+.allInfosOnMe div i{
+	font-size: 0.7em;
+}
+
+.titles{
+	font-size: 0.9em;
+}
+
+.text{
+	font-size: 0.8em;
+}
+
+#switch{
+	width: 60px;
+	height: 30px;
+	background-color: #FFF;
+	border-radius: 20px;
+	position: relative;
+	top: 5px;
+}
+
+#switchRound{
+	height: 20px;
+	width: 20px;
+	background-color: #103049;
+	border-radius: 50%;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+
+nav ul li{
+	font-size: 0.8em;
+}
+
+#back{
+	padding-top: 200px;
+}
+
+#reseaux{
+	margin: 0 0 0 75px;
+}
+
+#infos{
+	margin: 0 75px 0 0;
+	height: 110px;
+}
+
+.letters{
+	font-size: 1.2em;
+}
+
+#formation h4{
+	font-size: 1.3em
+}
+
+/* portfolio */
+
+
+
+.desc h5{
+	font-size: 1em;
+}
+
+.desc p{
+	font-size: 0.75em;
+}
