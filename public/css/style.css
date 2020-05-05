@@ -1,0 +1,330 @@
+/* ALL */
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	color: #FFF;
+}
+
+h3 {
+	text-align: center;
+	width: 40%;
+	margin: 0 auto;
+	font-size: 2em;
+	padding: 10px 0;
+	border-radius: 3px;
+	color: #103049;
+	background-color: #FFF;
+}
+
+.titles{
+	background-image: url(../images/titleBackground2.jpg);
+	background-repeat: repeat;
+	height: 200px;
+	padding-top: 100px;
+}
+
+.triangles{
+	width: 80px;
+	display: flex;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.triangles div:last-child{
+	
+}
+
+.tri{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 20px 0 20px;
+	border-color: #ffffff transparent transparent transparent;
+}
+
+.allInfosOnMe{
+	width: 250px;
+	min-width: 150px;
+	height: 125px;
+	border: 1px solid #FFF;
+	border-radius: 5px;
+	background-color: #103049;
+}
+
+.allInfosOnMe:hover{
+	background-color: #FFF;
+	transition: .4s
+}
+
+.text{
+	width: 75%;
+	border: 1px solid #FFF;
+	border-radius: 3px;
+}
+
+.sections{
+	width: 100%;
+	background-color: #103049;
+	border-top: 0px solid #FFF;
+}
+
+@keyframes bubble {
+
+	0% {
+		font-size: 1.2em;
+	}
+
+	50% {
+		font-size: 1.4em;
+	}
+
+	100% {
+		font-size: 1.2em;
+	}
+
+}
+
+@keyframes fondu {
+
+	25% {
+		opacity: 0.4;
+	}
+
+	75% {
+		opacity: 1;
+	}
+
+}
+
+
+
+/* HEADER */
+
+
+
+
+header {
+	background-image: radial-gradient(circle at bottom, #ACACAC, #103049, #103049);
+}
+
+header nav {
+	width: 100%;
+	height: 100px;
+	box-shadow: 0px 1px 5px #FFF;
+	position: fixed;
+	background-color: #103049;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+}
+
+header nav ul {
+	width: 90%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+header nav ul li {
+	width: 100%;
+	height: 55px;
+	text-align: center;
+	padding-top: 45px;
+}
+
+header nav ul li a {
+	padding: 5px;
+	font-size: 1.2em;
+	text-decoration: none;
+	border: 1px solid #FFF;
+	border-radius: 3px;
+}
+
+header nav ul li a:hover {
+	animation: .5s bubble;
+	background-color: #FFF;
+	color: #103049;
+	transition: .4s;
+}
+
+#switch{
+	width: 80px;
+	height: 35px;
+	background-color: #FFF;
+	border-radius: 20px;
+	position: relative;
+	top: 5px;
+}
+
+#switchRound{
+	height: 25px;
+	width: 25px;
+	background-color: #103049;
+	border-radius: 50%;
+	position: absolute;
+	top: 5px;
+	left: 45px;
+}
+
+#back {
+	width: 100%;
+	height: 350px;
+	display: flex;
+	position: relative;
+	padding-top: 100px;
+}
+
+#reseaux {
+	font-size: 0.8em;
+	margin: 75px 0 0 75px;
+	display: flex;
+	flex-direction: row;
+	z-index: 9;
+}
+
+#reseaux:hover i {
+	color: #103049;
+	transition: .4s;
+}
+
+#reseaux:hover a{
+	color: #103049;
+	transition: .4s;
+}
+
+.res {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: auto 0;
+}
+
+#words {
+	flex: 1.5;
+}
+
+#icons {
+	flex: 1;
+	font-size: 1.5em;
+}
+
+#pp {
+	width: 250px;
+	min-width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	border: 30px solid #103049;
+	margin: 0 auto;
+	position: relative;
+	bottom: -200px;
+	background-image: url('../images/pp.jpg');
+}
+
+#bvn {
+	width: 300px;
+	height: 310px;
+	position: absolute;
+	top: -35px;
+	left: -30px;
+	border-top: 5px solid #2b6ccd;
+	border-bottom: 5px solid #2b6ccd;
+	border-right: 5px solid #FFF;
+	border-left: 5px solid #FFF;
+	border-radius: 50%;
+}
+
+.letters {
+	position: absolute;
+	top: 0;
+	left: 48%;
+	height: 158px;
+	transform-origin: bottom center;
+	font-size: 1.5em;
+	font-weight: 600;
+	animation: fondu 2s infinite;
+}
+
+#l1 {
+	transform: rotate(-40deg);
+	height: 155px;
+}
+
+#l2 {
+	transform: rotate(-30deg);
+	height: 150px;
+}
+
+#l3 {
+	transform: rotate(-20deg);
+}
+
+#l4 {
+	transform: rotate(-10deg);
+}
+
+#l5 {
+	transform: rotate(0deg);
+}
+
+#l6 {
+	transform: rotate(10deg);
+}
+
+#l7 {
+	transform: rotate(20deg);
+}
+
+#l8 {
+	transform: rotate(30deg);
+}
+
+#l9 {
+	transform: rotate(40deg);
+
+}
+
+#infos {
+	font-size: 1.2em;
+	margin: 75px 75px 0 0;
+	text-align: center;
+	padding-top: 10px;
+}
+
+#infos:hover li{
+	color: #103049;
+}
+
+#infos:hover a {
+	background-color: #FFF;
+	color: #103049;
+	border: 1px solid #103049;
+	transition: .4s;
+}
+
+#infos a {
+	font-size: 0.9em;
+	padding: 7px;
+	border: 1px solid #FFF;
+	border-radius: 3px;
+}
+
+#infos a:hover {
+	color: #FFF;
+	background-color: #103049;
+}
+
+#infos ul li:last-child {
+	margin: 20px;
+}
+
+#separator{
+	width: 100%;
+	height: 200px;
+	background-color: #103049;
+	margin-top: 5px;
+}

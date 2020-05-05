@@ -1,0 +1,121 @@
+h3{
+	text-decoration: underline;
+}
+
+#projets{
+	width: 100%;
+	height: auto;
+	padding: 150px 0 50px 0;
+	background-color: #103049;
+}
+article{
+	flex: 1;
+	width: 65%;
+	margin: 100px auto 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 500px;
+	border: 1px solid #FFF;
+	border-radius: 25px 25px 3px 3px;
+	padding-top: 25px;
+	text-align: center;
+	background-image: url('../images/projectBack.webp');
+}
+
+article a:first-child{
+	margin-bottom: 20px;
+}
+
+.content{
+	flex: 1.5;
+	background-color: #103049;
+	padding: 75px 25px 0 25px;
+	border-top: 1px solid #FFF;
+}
+
+article a:last-child{
+	flex: 0.5;
+	background-color: #103049;
+	width: 100%;
+	padding: 25px 0 10px 0;
+	border-top: 1px solid #FFF;
+}
+
+article a:last-child:hover{
+	color: #103049;
+	background-color: #FFF;
+	transition: .4s;
+}
+
+/* COMMENTAIRES */
+
+#comments div{
+	height: auto;
+	padding: 50px 50px;
+	width: 100%;
+	margin: 0 auto;
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+	margin-bottom: 100px;
+}
+
+#comments div p span{
+	text-decoration: underline;
+}
+
+#comments div p span strong{
+	font-size: 1.2em;
+}
+
+#comments{
+	height: 1100px;
+	background-color: #103049;
+	padding-bottom: 100px;
+	padding-top: 50px;
+}
+
+#comments h3{
+	margin-bottom: 100px;
+}
+
+#comments form{
+	width: 80%;
+	height: 350px;
+	justify-content: space-around;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+#comments form label{
+	font-size: 1.2em;
+	text-decoration: underline;
+}
+
+#comments form input{
+	color: #103049;
+	width: 70%;
+	margin: 0 auto;
+	border-radius: 3px;
+	border: none;
+	height: 30px;
+}
+
+#comments form input:last-child{
+	color: #103049;
+	width: 40%;
+	padding: 10px;
+	margin-top: 15px;
+	height: auto;
+	max-width: 150px;
+}
+
+#comments textarea{
+	color: #103049;
+	height: 100px;
+	border-radius: 3px;
+	border: none;
+}

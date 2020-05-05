@@ -1,0 +1,366 @@
+*{
+
+}
+
+h1 {
+	margin: 0 auto;
+	width: 350px;
+	font-size: 1.5em;
+}
+
+h2 {
+	font-size: 1.2em;
+}
+
+.text_subtitle {
+	margin: 0 auto;
+	width: 350px;
+	padding: 5px 0 25px 0;
+	color: #717479;
+	font-size: 0.8em;
+}
+
+
+
+
+
+
+/* HEADER */
+
+
+
+
+
+
+header {
+	height: 205px;
+}
+
+#barre_menu {
+	height: 40px;
+	width: 100%;
+	bottom: 0px;
+	border-top: 1px solid #EBEBEB;
+}
+
+
+#barre_menu ul {
+	flex-direction: row;
+	height : 100%;
+	width: 100%;
+	border-left: 0;
+}
+
+#barre_menu ul li {
+	width: 25%;
+	height: 100%;
+}
+
+#barre_menu ul li a {
+	font-size: 0.8em;
+	width: 100%;
+	height: 100%;
+	line-height: 40px;
+	padding: 0;
+
+}
+
+#barre_menu ul li a:hover {
+	padding: 0;
+	border-right: 0;
+}
+
+#main_image {
+	background-image: url(images/slider-min/bg1.jpg);
+	height: 205px;
+	margin-right: 0px;
+}
+
+#main_image i:first-child {
+	padding: 8px 2.5px 0 2.5px;
+}
+
+#main_image i:nth-child(2) {
+	padding: 8px 2.5px 0 2.5px;
+}
+
+#main_image i {
+	font-size: 0.5em;
+	top: 100px;
+	height: 15px;
+	width: 10px;
+}
+
+#main_text {
+	text-align: center;
+	padding: 50px 0 0 0;
+}
+
+#main_text p {
+	font-size: 0.6em;
+}
+
+#main_text div {
+	margin: 0 auto;
+	font-size: 0.5em;
+	padding-top : 3.5px;
+	width: 50px;
+	height: 15px;
+	box-shadow: 0 1.5px 0 #4494BB;
+}
+
+.barres {
+	height: 2px;
+}
+
+#bars {
+	margin-top: 52px;
+}
+
+
+
+
+
+/* SECTION UNE */
+
+
+
+
+
+
+#ancre1 {
+	height: 25px;
+}
+
+#section_une {
+	margin: 15px auto 0 auto;
+}
+
+
+#section_une #container {
+	flex-direction: column;
+	width: 100%;
+}
+
+.circle {
+	margin: 0 auto;
+	width: 350px;
+}
+
+#computer {
+	margin-left: -20px;
+	background-image: url(images/main-feature-min.png);
+	width: 350px;
+	height: 218px;
+}
+
+#services {
+	margin-right: 0px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.serv {
+	margin: 0 auto;
+	width: 350px;
+}
+
+.logo_serv i:first-child {
+	font-size: 0.75em;
+	padding: 7.5px;
+}
+
+.logo_serv i:last-child {
+	font-size: 0.375em;
+	bottom: 38px;
+	left: 25px;
+}
+
+.paragraphes {
+	margin: 5px;
+	padding-top: 12.5px;
+}
+.paragraphes h4 {
+	font-size: 0.8em;
+	padding-bottom: 4px;
+}
+
+.paragraphes p {
+	font-size: 0.6em;
+}
+
+
+
+
+
+/* SECTION DEUX */
+
+
+
+
+
+
+#ancre2 {
+	height: 25px;
+}
+
+#section_deux {
+	margin-right: 0px;
+	padding: 10px 0;
+	margin-top: 0px;
+}
+
+#section_deux ul {
+	margin-top: 10px;
+}
+
+#section_deux li {
+	font-size: 0.6em;
+	width: 55px;
+	height: 20px;
+	padding-top: 7.5px;
+}
+
+#section_deux #container1 {
+	margin-top: 15px;
+}
+
+.desc {
+	font-size: 0.5em;
+	margin-top: 103px;
+	padding: 5px;
+	height : 19px;
+}
+
+.pfelements i {
+	top: -10px;
+	right: 10px;
+	height: 14px;
+	width: 19.5px;
+	padding-top: 5.5px;
+	border: 1px solid #FFF;
+}
+
+.pfelements {
+	width: 200px;
+	height: 132px;
+}
+
+#element1 {
+	background-image: url(images/portfolio-min/01.jpg);
+}
+
+#element2 {
+	background-image: url(images/portfolio-min/02.jpg);
+}
+
+#element3 {
+	background-image: url(images/portfolio-min/03.jpg);
+}
+
+#element4 {
+	background-image: url(images/portfolio-min/04.jpg);
+}
+
+#element5 {
+	background-image: url(images/portfolio-min/05.jpg);
+}
+
+#element6 {
+	background-image: url(images/portfolio-min/06.jpg);
+}
+
+#element7 {
+	background-image: url(images/portfolio-min/07.jpg);
+}
+
+#element8 {
+	background-image: url(images/portfolio-min/08.jpg);
+}
+
+
+
+
+
+/* FOOTER */
+
+
+
+
+
+footer {
+	background-color: rgb(240, 244, 246);
+	height: 450px;
+}
+
+iframe{
+	height: 250px;
+}
+
+#formulaire {
+	background-color: rgb(240, 244, 246);
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 460px;
+	height: 200px;
+	top: 0px;
+	right: 0px;
+	position: relative;
+}
+
+#formulaire div {
+	width: 50%;
+	text-align: center;
+}
+
+#formulaire h3 {
+	font-size: 1.2em;
+	padding: 35px 0 10px 0;
+}
+
+#formulaire p {
+	font-size: 0.7em;
+}
+
+form {
+	width: 50%;
+}
+
+form input {
+	margin-bottom: 0px;
+	padding-bottom: 5px;
+	width: 120px;
+	height: 8px;
+}
+
+form input:first-child {
+	margin-top: 15px;
+}
+
+form input::placeholder {
+	font-size: 0.5em;
+}
+
+form input[type=submit] {
+	float: none;
+	padding-top: 3px;
+	margin-left: 0px;
+	margin-top: 12px;
+	font-size: 8px;
+	width: 120px;
+	height: 15px;
+	box-shadow: 0px 0.75px 0 #4494BB;
+}
+
+form textarea {
+	padding-top: 2px;
+	margin-bottom: -8px;
+	margin-top: 4px;
+	width: 120px;
+	height: 40px;
+}
+
+form textarea::placeholder {
+	font-size: 0.6em;
+}
