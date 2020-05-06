@@ -8,7 +8,7 @@ $subtitle = 'Projet';
 
 ob_start();
 
-while ($données = $project->fetch()) {
+while ($données = $project->fetch()):
 ?>
 
 <section id="projets">
@@ -32,7 +32,7 @@ while ($données = $project->fetch()) {
 </section>
 
 <?php
-}
+endwhile;
 ?>
 
 <section id="comments">
@@ -41,7 +41,7 @@ while ($données = $project->fetch()) {
 
 	<div>
 		<?php
-		while($comment = $comments->fetch()){
+		while($comment = $comments->fetch()):
 		?>
 		
 		<p><?= '<span><strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $comment['creation_date_fr'] . '</span> : ' . htmlspecialchars($comment['content']) ?></p>
@@ -49,7 +49,7 @@ while ($données = $project->fetch()) {
 		<a href="index.php?action=report&amp;comment_id=<?= $comment['id'] ?>">(Signaler)</a>
 
 		<?php
-		}
+		endwhile;
 		?>
 	</div>
 

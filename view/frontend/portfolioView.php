@@ -32,7 +32,7 @@ ob_start();
 	<div class="containerpf">
 
 	<?php
-	while ($données = $projects->fetch()) {
+	while ($données = $projects->fetch()):
 	?>
 
 		<a href="index.php?action=project&amp;p_id=<?= $données['id'] ?>" class="ocr">
@@ -47,7 +47,7 @@ ob_start();
 		</a>
 	
 	<?php
-	}
+	endwhile;
 	?>
 
 	</div>

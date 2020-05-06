@@ -14,13 +14,11 @@ ob_start();
 	
 	<?php
 	    $retour = mail('teo.casanova13@gmail.com', $_POST['objet'], $_POST['message']);
-	    if ($retour) {
+	    if ($retour):
 	        echo '<p>Votre message a bien été envoyé.</p>';
-	    }
-	    else{
+	    else:
 	    	throw new \Exception('Echec de l\'envoi du mail');
-	    	
-	    }
+	    endif;
 	?>
 
 </div>

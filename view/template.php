@@ -57,42 +57,36 @@
 			<li><a href="index.php?action=contact" class="scroll">Contact</a></li>
 			
 			<li><a href="index.php?action=<?php
-            if(isset($_SESSION['isLoggedIn'])){
-                if($_SESSION['isLoggedIn']){
+            if(isset($_SESSION['isLoggedIn'])):
+                if($_SESSION['isLoggedIn']):
                     echo 'adminPage';
-                }
-                else{
+                else:
                     echo 'connexionPage';
-                }
-            }
-            else{
+                endif;
+            else:
                 echo 'connexionPage';
-            }
+            endif;
                 ?>"><?php
-            if (isset($_SESSION['isLoggedIn'])) {
-                if (!$_SESSION['isLoggedIn']) {
+            if (isset($_SESSION['isLoggedIn'])):
+                if (!$_SESSION['isLoggedIn']):
                     echo 'Connexion';
-                }
-                else{
+                else:
                     echo 'Admin';
-                }
-            }
-            else{
+                endif;
+            else:
                 echo 'Connexion';
-            }
+            endif;
             ?></a></li>
             <li><a href="index.php?action=deconnexion" style="display:<?php
-            if (isset($_SESSION['isLoggedIn'])) {
-                if ($_SESSION['isLoggedIn']) {
+            if (isset($_SESSION['isLoggedIn'])):
+                if ($_SESSION['isLoggedIn']):
                     echo "flex";
-                }
-                else{
+                else:
                     echo "none";
-                }
-            }
-            else{
+                endif;
+            else:
                 echo "none";
-            }
+            endif;
             ?>">Déconnexion</a></li>
 
 		</ul>
@@ -157,17 +151,15 @@
 				<li>22ans</li>
 				<li>Développeur web</li>
 				<li><a href="<?php
-				if(isset($_GET['action'])){
-					if($_GET['action'] == 'home'){
+				if(isset($_GET['action'])):
+					if($_GET['action'] == 'home'):
 						echo '#desc';
-					}
-					else{
+					else:
 						echo 'index.php?action=home';
-					}
-				}
-				else{
+					endif;
+				else:
 					echo '#desc';
-				}
+				endif;
 				?>" class="scroll">Plus d'info</a></li>
 
 			</ul>

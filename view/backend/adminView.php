@@ -34,7 +34,7 @@ ob_start();
 </div>
 
 <?php
-while ($data = $project->fetch()) {
+while ($data = $project->fetch()):
 ?>
 
 <section id="projets">
@@ -59,7 +59,7 @@ while ($data = $project->fetch()) {
 </section>
 
 <?php
-}
+endwhile;
 
 /*$commentsPerPage = 5;
 $totalCommentReq = $db->query('SELECT id FROM comments');
@@ -85,8 +85,8 @@ $start = ($currentPage-1)*$commentsPerPage;*/
 
 		<?php
 		/*$comments = $db->query('SELECT * FROM comments ORDER BY id DESC LIMIT' . $start . ',' . $commentsPerPage);*/
-		while ($comment = $AllComments->fetch()){
-			if ($comment['report'] > 0) {
+		while ($comment = $AllComments->fetch()):
+			if ($comment['report'] > 0):
 		?>
 
 			<h4>Billet n°<?= htmlspecialchars($comment['project_id']) ?> : </h4>
@@ -100,16 +100,16 @@ $start = ($currentPage-1)*$commentsPerPage;*/
 			
 
 		<?php
-			}
-		}
-		/*for($i=1;$i<=$totalPages;$i++){
-			if ($i == $currentPage) {
+			endif;
+		endwhile;
+		/*for($i=1;$i<=$totalPages;$i++):
+			if ($i == $currentPage):
 				echo $i . ' ';
-			}
-			else {
+			
+			else:
 				echo '<a href="index.php?page='.$i.'">'.$i.'</a>';
-			}
-		}*/
+			endif;
+		endfor;*/
 		?>
 
 	</div>
