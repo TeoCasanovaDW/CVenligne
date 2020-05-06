@@ -19,6 +19,10 @@ h3 {
 	background-color: #FFF;
 }
 
+h4 {
+	font-size: 1.75em;
+}
+
 .titles{
 	background-image: url(../images/titleBackground2.jpg);
 	background-repeat: repeat;

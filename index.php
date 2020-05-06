@@ -4,7 +4,11 @@ session_start();
 
 use \Teo\CVenligne\controller\Controller;
 
-require_once('controller/controller.php');
+require ('Autoloader/Autoloader.php');
+use \Teo\CVenligne\autoloader\Autoloader;
+Autoloader::register();
+
+/*require ('controller/Controller.php');*/
 
 $controller = new Controller();
 

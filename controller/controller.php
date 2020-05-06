@@ -6,32 +6,28 @@ use \Teo\CVenligne\Model\ProjectManager;
 use \Teo\CVenligne\Model\CommentsManager;
 use \Teo\CVenligne\Model\AdminManager;
 
-require_once('./model/ProjectManager.php');
-require_once('./model/CommentsManager.php');
-require_once('./model/AdminManager.php');
-
 class Controller
 {
 
     /* PAGES */
 
     public function displayHomePage(){
-        require('./view/homeView.php');
+        require('./view/frontend/homeView.php');
     }
 
     public function displayPortfolioPage(){
         $projectManager = new ProjectManager();
         $projects = $projectManager->displayProjects();
 
-        require('./view/portfolioView.php');
+        require('./view/frontend/portfolioView.php');
     }
 
     public function displayFormationPage(){
-        require('./view/formation_diplomeView.php');
+        require('./view/frontend/formation_diplomeView.php');
     }
 
     public function displayContactPage(){
-        require('./view/contactView.php');
+        require('./view/frontend/contactView.php');
     }
 
     public function displayTheProject(){
@@ -43,17 +39,12 @@ class Controller
 
         if($project){
             $comments = $commentManager->getComments($_GET['p_id']);
-            require('./view/projectView.php');
+            require('./view/frontend/projectView.php');
         }
         else{
             throw new \Exception('Mauvais identifiant de projet');
         }
     }
-
-
-
-
-
 
     public function createProject(){
         $adminManager = new AdminManager();
@@ -67,7 +58,7 @@ class Controller
         $display = $adminManager->displayProject($_GET['p_id']);
         $displayProjectToUpdate = $display->fetch();
         if($displayProjectToUpdate){
-            require('./view/adminUpdateView.php');
+            require('./view/backend/adminUpdateView.php');
         }
         else{
             throw new \Exception('Le post n\'existe pas');
@@ -87,12 +78,6 @@ class Controller
 
         header('Location: index.php?action=adminPage');
     }
-
-
-
-
-
-
 
     public function addComment($project_id, $name, $firstname, $comment){
         $commentManager = new CommentsManager();
@@ -120,7 +105,7 @@ class Controller
 
         $old_comment = $commentManager->displayCommentEditor($_GET['comment_id']);
 
-        require('./view/modifyCommentView.php');
+        require('./view/backend/modifyCommentView.php');
     }
 
     public function editComment($newComment)
@@ -153,7 +138,7 @@ class Controller
     }
 
     public function sendAMail(){
-        require('./view/mailView.php');
+        require('./view/frontend/mailView.php');
     }
 
 
@@ -166,7 +151,7 @@ class Controller
         $adminManager = new AdminManager();
         $adminManager->getConnexionPage();
 
-        require('./view/connexionAdminView.php');
+        require('./view/frontend/connexionAdminView.php');
     }
 
     public function getConnected(){
@@ -190,7 +175,7 @@ class Controller
         $project = $projectManager->displayProjects();
         $AllComments = $commentManager->getAllComments();
 
-        require('./view/adminView.php');
+        require('./view/backend/adminView.php');
     }
 
 }

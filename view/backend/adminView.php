@@ -60,6 +60,21 @@ while ($data = $project->fetch()) {
 
 <?php
 }
+
+/*$commentsPerPage = 5;
+$totalCommentReq = $db->query('SELECT id FROM comments');
+$totalComments = $totalCommentReq->rowCount();
+$totalPages = ceil($totalComments/$commentsPerPage);
+
+if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $totalPages){
+	$_GET['page'] = intval($_GET['page']);
+	$currentPage = $_GET['page'];
+} else {
+	$currentPage = 1;
+}
+
+$start = ($currentPage-1)*$commentsPerPage;*/
+
 ?>
 
 <div id="comments">
@@ -69,6 +84,7 @@ while ($data = $project->fetch()) {
 	<div id="commentSpace">
 
 		<?php
+		/*$comments = $db->query('SELECT * FROM comments ORDER BY id DESC LIMIT' . $start . ',' . $commentsPerPage);*/
 		while ($comment = $AllComments->fetch()){
 			if ($comment['report'] > 0) {
 		?>
@@ -86,6 +102,14 @@ while ($data = $project->fetch()) {
 		<?php
 			}
 		}
+		/*for($i=1;$i<=$totalPages;$i++){
+			if ($i == $currentPage) {
+				echo $i . ' ';
+			}
+			else {
+				echo '<a href="index.php?page='.$i.'">'.$i.'</a>';
+			}
+		}*/
 		?>
 
 	</div>
@@ -96,6 +120,6 @@ while ($data = $project->fetch()) {
 
 $content = ob_get_clean();
 
-require('template.php');
+require('./view/template.php');
 
 ?>

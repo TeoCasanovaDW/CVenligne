@@ -15,8 +15,13 @@
 	margin: 75px auto 0 auto;
 }
 
-#siteDesc div p{
-	
+p a{
+	text-decoration: underline;
+}
+
+p a:hover{
+	text-decoration: none;
+	color: grey;
 }
 
 /* DESCRIPTION */
