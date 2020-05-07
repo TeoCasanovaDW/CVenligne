@@ -15,14 +15,16 @@ ob_start();
 	<form id="formAdminConnect" action="index.php?action=adminConnect" method="post">
 		
 		<label>Identifiant :</label>
-		<input type="text" name="user">
+		<input type="text" name="user" id="user">
 		<label>Mot de passe :</label>
-		<input type="password" name="password">
-		<input type="submit" name="valider">
+		<input type="password" name="password" id="password">
+		<input type="submit" name="valider" id="submit">
 
 	</form>
 
 </section>
+
+<script type="text/javascript" src="./public/js/connexionAdminView.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 

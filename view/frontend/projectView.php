@@ -55,7 +55,7 @@ endwhile;
 
 	<h3>Ajouter un commentaire</h3>
 	
-	<form method="post" action="index.php?action=addComment&amp;p_id=<?= $_GET['p_id'] ?>">
+	<form method="post" action="index.php?action=addComment&amp;p_id=<?= $_GET['p_id'] ?>" id="formAddComment">
 		<label for="name">Nom :</label>
 		<input type="text" name="name" id="name">
 
@@ -65,11 +65,13 @@ endwhile;
 		<label for="content">Message :</label>
 		<textarea name="content" id="content"></textarea>
 
-		<input type="submit" name="Envoyer" value="Envoyer">
+		<input type="submit" name="Envoyer" value="Envoyer" id="submit">
 
 	</form>
 
 </section>
+
+<script type="text/javascript" src="./public/js/projectView.js"></script>
 
 <?php
 

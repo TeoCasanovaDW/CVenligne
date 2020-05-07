@@ -12,22 +12,24 @@ ob_start();
 
 <footer id="contact" class="sections">
 
-	<form class="text" action="index.php?action=mail" method="post">
+	<form id="formContact" class="text" action="index.php?action=mail" method="post">
 		
 		<label>Nom :</label>
-		<input type="text" name="nom" placeholder="Saisissez vôtre nom">
+		<input type="text" name="nom" placeholder="Saisissez vôtre nom" id="nom">
 
 		<label>Objet :</label>
-		<input type="text" name="objet" placeholder="Saisissez l'objet de vôtre message">
+		<input type="text" name="objet" placeholder="Saisissez l'objet de vôtre message" id="objet">
 
 		<label>Message :</label>
-		<input type="text" name="message" placeholder="Saisissez vôtre message">
+		<input type="text" name="message" placeholder="Saisissez vôtre message" id="message">
 
-		<input type="submit" name="envoyer" value="Envoyer">
+		<input type="submit" name="envoyer" value="Envoyer" id="submit">
 
 	</form>
 
 </footer>
+
+<script type="text/javascript" src="./public/js/contactView.js"></script>
 
 <?php
 
