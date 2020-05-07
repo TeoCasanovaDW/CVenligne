@@ -146,3 +146,25 @@ article a:last-child:hover{
 #commentSpace a:hover{
 	text-decoration: underline;
 }
+
+#pagination{
+	padding-top: 30px;
+	width: 15%;
+	margin: 0 auto;
+	justify-content: space-around;
+	display: flex;
+
+}
+
+#pagination a{
+	text-decoration: underline;
+}
+
+#pagination a:hover{
+	text-decoration: none;
+	color: grey;
+}
+
+#pagination p{
+	color: grey;
+}

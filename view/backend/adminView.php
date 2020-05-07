@@ -60,21 +60,6 @@ while ($data = $project->fetch()):
 
 <?php
 endwhile;
-
-/*$commentsPerPage = 5;
-$totalCommentReq = $db->query('SELECT id FROM comments');
-$totalComments = $totalCommentReq->rowCount();
-$totalPages = ceil($totalComments/$commentsPerPage);
-
-if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $totalPages){
-	$_GET['page'] = intval($_GET['page']);
-	$currentPage = $_GET['page'];
-} else {
-	$currentPage = 1;
-}
-
-$start = ($currentPage-1)*$commentsPerPage;*/
-
 ?>
 
 <div id="comments">
@@ -84,15 +69,14 @@ $start = ($currentPage-1)*$commentsPerPage;*/
 	<div id="commentSpace">
 
 		<?php
-		/*$comments = $db->query('SELECT * FROM comments ORDER BY id DESC LIMIT' . $start . ',' . $commentsPerPage);*/
-		while ($comment = $AllComments->fetch()):
+		while ($comment = $comments->fetch()):
 			if ($comment['report'] > 0):
 		?>
 
 			<h4>Billet n°<?= htmlspecialchars($comment['project_id']) ?> : </h4>
 
 			<p>
-				<?= 'De <strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $comment['creation_date_fr'] . ' :<br><p id="com">' . htmlspecialchars($comment['content']) . '</p>'?>
+				<?= 'De <strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $comment['creation_date'] . ' :<br><p id="com">' . htmlspecialchars($comment['content']) . '</p>'?>
 			</p>
 			<a href="index.php?action=commentEditor&amp;comment_id=<?= $comment['id'] ?>">(Modifier)</a>
 			<a href="index.php?action=deleteComment&amp;comment_id=<?= $comment['id'] ?>">(Supprimer)</a>
@@ -102,15 +86,19 @@ $start = ($currentPage-1)*$commentsPerPage;*/
 		<?php
 			endif;
 		endwhile;
-		/*for($i=1;$i<=$totalPages;$i++):
-			if ($i == $currentPage):
-				echo $i . ' ';
-			
-			else:
-				echo '<a href="index.php?page='.$i.'">'.$i.'</a>';
-			endif;
-		endfor;*/
 		?>
+		<div id="pagination">
+		<?php
+			for($i=1;$i<=$totalPages;$i++):
+				if ($i == $currentPage):
+					echo '<p>' . $i . '</p>';
+				
+				else:
+					echo '<a href="index.php?action=adminPage&amp;page='.$i.'">'.$i.'</a>';
+				endif;
+			endfor;
+		?>
+		</div>
 
 	</div>
 

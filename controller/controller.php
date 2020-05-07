@@ -141,12 +141,6 @@ class Controller
         require('./view/frontend/mailView.php');
     }
 
-
-
-
-
-
-
     public function displayConnexionPage(){
         $adminManager = new AdminManager();
         $adminManager->getConnexionPage();
@@ -173,7 +167,21 @@ class Controller
         $projectManager = new ProjectManager();
         $commentManager = new CommentsManager();   
         $project = $projectManager->displayProjects();
-        $AllComments = $commentManager->getAllComments();
+        $totalComments = $commentManager->paginationNumbers();
+
+        $commentsPerPage = 3;
+        $totalPages = ceil($totalComments/$commentsPerPage);
+
+        if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $totalPages){
+            $_GET['page'] = intval($_GET['page']);
+            $currentPage = $_GET['page'];
+        } else {
+            $currentPage = 1;
+        }
+
+        $start = ($currentPage-1)*$commentsPerPage;
+
+        $comments = $commentManager->pagination($start, $commentsPerPage);
 
         require('./view/backend/adminView.php');
     }

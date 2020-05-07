@@ -72,4 +72,19 @@ class CommentsManager extends Manager
 
         return $removeReport;
     }
+
+    public function pagination($start, $commentsPerPage){
+        $db = $this->dbConnect();
+        $comments = $db->query('SELECT * FROM comments ORDER BY id LIMIT ' . $start . ',' . $commentsPerPage);
+
+        return $comments;
+    }
+
+    public function paginationNumbers(){
+        $db = $this->dbConnect();
+        $totalCommentReq = $db->query('SELECT id FROM comments');
+        $totalComments = $totalCommentReq->rowCount();
+        
+        return $totalComments;
+    }
 }
