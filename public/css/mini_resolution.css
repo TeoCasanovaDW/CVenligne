@@ -1,16 +1,113 @@
-nav ul li{
-	word-wrap: break-word;
+h3{
+	width: 75%;
 }
 
-#portfolio{
-	height: 1800px;
+h4{
+	width: 75%;
 }
 
-.containerpf{
-	height: 600px;
+header nav{
+	width: 75px;
+	height: 75px;
+	background-color: rgba(16, 48, 73, 0.7);
+	box-shadow: none;
+	border-right: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+	border-radius: 0 0 5px 0;
+}
+
+header nav ul{
+	display: none;
+}
+
+header nav ul li{
+	display: none;
+}
+
+header nav ul li a{
+	display: none;
+}
+
+.fa-bars::before,
+.fa-bars{
+	display: inline-block;
+}
+
+/* open navbar */
+
+.navBarOpen{
+	background-color: rgba(16, 48, 73, 0.8);
+	width: 100%;
+	height: 100%;
+	flex-direction: column-reverse;
+	padding-top: 25px;
+}
+
+.navBarOpen ul{
+	display: flex;
+	width: 100%;
+	height: 100%;
 	flex-direction: column;
 }
 
-.sousElements{
+.navBarOpen ul li{
+	display: flex;
 	width: 100%;
 }
+
+.navBarOpen ul li a{
+	display: block;
+	border: none;
+	font-size: 1.5em;
+}
+
+.navBarOpen ul li a:hover{
+	animation: none;
+	background-color: #103049;
+	color: #FFF;
+	text-decoration: underline;
+}
+
+header nav i{
+	cursor: pointer;
+	width: 100%;
+	font-size: 2.5em;
+	text-align: center;
+}
+
+#switch{
+	display: none;
+}
+
+#back{
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding-top: 25px;
+	padding-bottom: 200px;
+}
+
+#reseaux{
+	width: 50%;
+	font-size: 1em;
+	margin: 0px;
+	order: 1;
+}
+
+#pp{
+	position: absolute;
+	bottom: -150px;
+	order: 3;
+}
+
+#infos{
+	width: 50%;
+	height: auto;
+	font-size: 1.5em;
+	margin: 0px;
+	order: 2;
+}
+
+
+/*FORMATION*/
+

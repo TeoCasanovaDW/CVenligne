@@ -32,3 +32,25 @@
 	height: 200px;
 	margin: 0 auto;
 }
+
+@media (max-width: 845px){
+	#container{
+		height: 600px;
+		border: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	.formations{
+		text-align: center;
+		border-radius: 3px;
+		height: 200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		border: 1px solid #FFF;
+	}
+	.formations h4{
+		text-decoration: underline;
+	}
+}

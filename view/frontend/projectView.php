@@ -25,6 +25,13 @@ while ($données = $project->fetch()):
 
 		<div class="content"><?= $données['description'] ?></div>
 
+		<div class="skills">
+			
+			<h5>Compétences :</h5>
+			<?= $données['skills'] ?>
+				
+		</div>
+
 		<a href="index.php?action=portfolio">Retour aux projets</a>
 
 	</article>

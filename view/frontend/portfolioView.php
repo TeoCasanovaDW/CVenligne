@@ -38,10 +38,8 @@ ob_start();
 		<a href="index.php?action=project&amp;p_id=<?= $données['id'] ?>" class="ocr">
 			<div class="pfelements" id="pf1" style="background-image: url('<?= $données['img'] ?>');">
 				<div class="desc">
-					
 					<h5><?= $données['title'] ?></h5>
-					<p>Premier projet de la formation d'OpenClassRooms</p>
-
+					<p><?= substr($données['description'], 0, 60); ?> ...</p>
 				</div>
 			</div>
 		</a>

@@ -91,3 +91,19 @@
 	filter: grayscale(1);
 	transition-duration: grayscale .2s;
 }
+
+@media (max-width: 845px){
+	#menuPf{
+		width: 75%;
+	}
+	#menuPf ul{
+		height: auto;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	.containerpf{
+		height: auto;
+		flex-direction: column;
+	}
+}

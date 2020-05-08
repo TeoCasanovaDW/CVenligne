@@ -43,6 +43,17 @@ $(()=>{
 		
 	});
 
-	
+	/* MENU RESPONSIVE */
+
+	let navButton = $('.fa-bars');
+	let navBar = $('#navbar');
+	let navUl = $('#nav-ul');
+	let navLi = $('#nav-li');
+	let navA = $('#nav-a');
+	let navBarIsOpen = false;
+
+	navButton.on('click', ()=>{
+		navBar.toggleClass("navBarOpen");		
+	});
 
 });

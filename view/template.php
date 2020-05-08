@@ -30,8 +30,8 @@
 		<!-- Viewport -->
 
 		<meta name="viewport" content="width=device-width, initial-scale = 1">
-		<link rel="stylesheet" type="text/css" media="screen and (max-width: 1050px)" href="petite_resolution.css">
-		<link rel="stylesheet" type="text/css" media="screen and (max-width: 845px)" href="mini_resolution.css">
+		<link rel="stylesheet" type="text/css" media="screen and (max-width: 1050px)" href="./public/css/petite_resolution.css">
+		<link rel="stylesheet" type="text/css" media="screen and (max-width: 845px)" href="./public/css/mini_resolution.css">
 
 		<!-- Font-awesome -->
 
@@ -47,16 +47,15 @@
 
 <header>
 	
-	<nav>
+	<nav id="navbar">
 		
-		<ul>
+		<ul id="nav-ul">
 
-			<li><a href="index.php?action=home" class="scroll">Accueil</a></li>
-			<li><a href="index.php?action=formation" class="scroll">Formations & Diplômes</a></li>
-			<li><a href="index.php?action=portfolio" class="scroll">Portfolio</a></li>
-			<li><a href="index.php?action=contact" class="scroll">Contact</a></li>
-			
-			<li><a href="index.php?action=<?php
+			<li class="nav-li"><a href="index.php?action=home" class="scroll nav-a">Accueil</a></li>
+			<li class="nav-li"><a href="index.php?action=formation" class="scroll nav-a">Formations & Diplômes</a></li>
+			<li class="nav-li"><a href="index.php?action=portfolio" class="scroll nav-a">Portfolio</a></li>
+			<li class="nav-li"><a href="index.php?action=contact" class="scroll nav-a">Contact</a></li>
+			<li class="nav-li"><a class="nav-a" href="index.php?action=<?php
             if(isset($_SESSION['isLoggedIn'])):
                 if($_SESSION['isLoggedIn']):
                     echo 'adminPage';
@@ -77,21 +76,23 @@
                 echo 'Connexion';
             endif;
             ?></a></li>
-            <li><a href="index.php?action=deconnexion" style="display:<?php
+            <li class="nav-li"><a class="nav-a" href="index.php?action=deconnexion" style="visibility:<?php
             if (isset($_SESSION['isLoggedIn'])):
                 if ($_SESSION['isLoggedIn']):
-                    echo "flex";
+                    echo "visible";
                 else:
-                    echo "none";
+                    echo "hidden";
                 endif;
             else:
-                echo "none";
+                echo "hidden";
             endif;
             ?>">Déconnexion</a></li>
 
 		</ul>
 
 		<div id="switch"><div id="switchRound"></div></div>
+
+		<i class="fas fa-bars"></i>
 
 	</nav>
 

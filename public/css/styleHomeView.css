@@ -46,12 +46,25 @@ h4{
 
 #text {
 	width: 80%;
-	margin: 0 auto;
-	padding-bottom: 50px;
+	padding: 40px;
+	border: 1px solid #FFF;
+	border-radius: 3px;
+	margin: 75px auto 0 auto;
 }
 
-#text p {
-	margin: 0 auto;
-	padding: 40px;
-	margin-top: 75px;
+@media (max-width: 845px){
+	#siteDesc div{
+		width: 75%;
+		border: none;
+	}
+
+	#desc{
+		height: auto;
+	}
+
+	#text{
+		width: 75%;
+		font-size: 16px;
+		border: none;
+	}
 }

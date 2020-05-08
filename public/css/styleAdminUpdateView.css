@@ -93,6 +93,10 @@ article a:last-child:hover{
 	padding: 10px;
 }
 
+#formUpdatePost label{
+	text-decoration: underline;
+}
+
 #formUpdatePost textarea{
 	color: #103049;
 	border: none;
@@ -115,4 +119,10 @@ article a:last-child:hover{
 	border-radius: 3px;
 	margin: 0 auto;
 	text-align: center;
+}
+
+@media (max-width: 845px){
+	article{
+		width: 90%;
+	}
 }
