@@ -90,7 +90,7 @@
 
 		</ul>
 
-		<div id="switch"><div id="switchRound"></div></div>
+		<!-- <div id="switch"><div id="switchRound"></div></div> -->
 
 		<i class="fas fa-bars"></i>
 
