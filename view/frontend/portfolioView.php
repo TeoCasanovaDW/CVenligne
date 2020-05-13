@@ -36,10 +36,10 @@ ob_start();
 	?>
 
 		<a href="index.php?action=project&amp;p_id=<?= $données['id'] ?>" class="ocr">
-			<div class="pfelements" id="pf1" style="background-image: url('<?= $données['img'] ?>');">
+			<div class="pfelements" id="image<?= $données['id'] ?>">
 				<div class="desc">
-					<h5><?= $données['title'] ?></h5>
-					<p><?= substr($données['description'], 0, 60); ?> ...</p>
+					<h5 id="titles<?= $données['id'] ?>"></h5>
+					<p id="desc<?= $données['id'] ?>"></p>
 				</div>
 			</div>
 		</a>

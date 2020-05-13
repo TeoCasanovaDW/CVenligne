@@ -52,18 +52,20 @@ header nav ul li a{
 
 .navBarOpen ul li{
 	display: flex;
+	align-items: center;
 	width: 100%;
 }
 
 .navBarOpen ul li a{
-	display: block;
+	display: flex;
+	align-items: center;
 	border: none;
 	font-size: 1.5em;
 }
 
 .navBarOpen ul li a:hover{
 	animation: none;
-	background-color: #103049;
+	background-color: inherit;
 	color: #FFF;
 	text-decoration: underline;
 }

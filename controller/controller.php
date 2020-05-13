@@ -36,7 +36,6 @@ class Controller
 
         $project = $projectManager->displayProject($_GET['p_id']);
 
-
         if($project){
             $comments = $commentManager->getComments($_GET['p_id']);
             require('./view/frontend/projectView.php');
@@ -184,6 +183,13 @@ class Controller
         $comments = $commentManager->pagination($start, $commentsPerPage);
 
         require('./view/backend/adminView.php');
+    }
+
+    public function displayJsonPage(){
+        $projectManager = new ProjectManager();
+
+        $jsonProjects = $projectManager->getAllProjects();
+        require('./view/backend/jsonPage.php');
     }
 
 }

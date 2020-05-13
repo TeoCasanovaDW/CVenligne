@@ -13,24 +13,23 @@ while ($données = $project->fetch()):
 
 <section id="projets">
 	
-	<h3><?= $données['title'] ?></h3>
+	<h3 id="title<?= $données['id'] ?>"></h3>
 
 	<article>
 
-		<a href="<?= $données['project_link'] ?>">
+		<a id="project_link<?= $données['id'] ?>">
 
-			<img src="<?= $données['img'] ?>" />
+			<img id="img<?= $données['id'] ?>"/>
 
 		</a>
 
-		<div class="content"><?= $données['description'] ?></div>
+		<div id="date<?= $données['id'] ?>" class="dates"></div>
 
-		<div class="skills">
-			
-			<h5>Compétences :</h5>
-			<?= $données['skills'] ?>
-				
-		</div>
+		<div id="description<?= $données['id'] ?>" class="content"></div>
+
+		<h5 class="skills">Compétences :</h5>
+
+		<div id="skill<?= $données['id'] ?>" class="skills"></div>
 
 		<a href="index.php?action=portfolio">Retour aux projets</a>
 

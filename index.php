@@ -18,6 +18,9 @@ try{
         if ($_GET['action'] == 'home') {
             $controller->displayHomePage();
         }
+        elseif($_GET['action'] == 'json'){
+            $controller->displayJsonPage();
+        }
         elseif ($_GET['action'] == 'formation') {
         	$controller->displayFormationPage();
         }

@@ -1,4 +1,5 @@
-h3{
+#projets h3{
+	width: 25%;
 	text-decoration: underline;
 }
 
@@ -25,7 +26,7 @@ article{
 }
 
 article a:first-child{
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .content{
@@ -42,10 +43,15 @@ article a:first-child{
 	padding-bottom: 50px;
 }
 
-.skills h5{
+h5.skills{
 	text-decoration: underline;
 	font-size: 1.2em;
 	padding-bottom: 10px;
+}
+
+.dates{
+	padding-bottom: 10px;
+	text-decoration: underline;
 }
 
 article a:last-child{
