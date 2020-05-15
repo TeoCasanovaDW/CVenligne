@@ -34,6 +34,10 @@ article{
 	background-image: url('../images/projectBack.webp');
 }
 
+article a img{
+	width: 100%;
+}
+
 article a:first-child{
 	margin-bottom: 20px;
 }
@@ -41,15 +45,29 @@ article a:first-child{
 .content{
 	flex: 1.5;
 	background-color: #103049;
-	padding: 75px 25px 0 25px;
+	padding: 50px 0;
 	border-top: 1px solid #FFF;
+	width: 100%;
+}
+
+.skills{
+	width: 100%;
+	flex: 1.5;
+	background-color: #103049;
+	padding-bottom: 50px;
+}
+
+h5.skills{
+	text-decoration: underline;
+	font-size: 1.2em;
+	padding-bottom: 10px;
 }
 
 article a:last-child{
 	flex: 0.5;
 	background-color: #103049;
 	width: 100%;
-	padding: 25px 0 10px 0;
+	padding: 25px 0;
 	border-top: 1px solid #FFF;
 }
 
@@ -97,6 +115,8 @@ article a:last-child:hover{
 	color: #FFF;
 	border: 1px solid #FFF;
 	text-align: center;
+	padding: 4px 0 0 4px;
+	margin-bottom: 10px;
 }
 
 #formUpdatePost label{

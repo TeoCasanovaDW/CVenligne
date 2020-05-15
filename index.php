@@ -248,7 +248,6 @@ try{
     default:
         $controller->displayHomePage();
     }
-        
 }
 catch(Exception $e){
     $errorMessage = $e->getMessage();

@@ -50,12 +50,12 @@ $(()=>{
 
 			/* ADD CONTENT */
 
-			$("#image" + nb).attr( "style", "background-image: url(./public/portfolio/" + data.result.projects[i].img + ")");
+			$("#image" + nb).attr( "style", "background-image: url(./uploads/" + data.result.projects[i].img + ")");
 			$("#desc" + nb).html(data.result.projects[i].miniDesc + " ...");
 			$("#titles" + nb).html(data.result.projects[i].title);
 			$("#title" + nb).html(data.result.projects[i].title);
 			$("#project_link" + nb).attr( "href", data.result.projects[i].project_link );
-			$("#img" + nb).attr( "src", "./public/portfolio/" + data.result.projects[i].img );
+			$("#img" + nb).attr( "src", "./uploads/" + data.result.projects[i].img );
 			$("#description" + nb).html(data.result.projects[i].description);
 			$("#skill" + nb).html(data.result.projects[i].skills);
 			$("#date" + nb).html(data.result.projects[i].creation_date);

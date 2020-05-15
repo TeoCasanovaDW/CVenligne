@@ -48,7 +48,7 @@ while ($data = $project->fetch()):
 
 		<a href="<?= $data['project_link'] ?>">
 
-			<img src="./public/portfolio/<?= $data['img'] ?>" />
+			<img src="./uploads/<?= $data['img'] ?>" />
 
 		</a>
 

@@ -20,7 +20,7 @@ ob_start();
 
 		<a href="<?= $displayProjectToUpdate['project_link'] ?>">
 
-			<img src="./public/portfolio/<?= $displayProjectToUpdate['img'] ?>" />
+			<img src="./uploads/<?= $displayProjectToUpdate['img'] ?>" />
 
 		</a>
 
@@ -29,6 +29,8 @@ ob_start();
 		<h5 class="skills">Compétences :</h5>
 
 		<div class="skills"><?= $displayProjectToUpdate['skills'] ?></div>
+
+		<a href="index.php?action=adminPage">Retour à la page d'administration</a>
  
 	</article>
 

@@ -102,21 +102,15 @@
 				
 				<h2><a href="https://www.linkedin.com/in/t%C3%A9o-casanova-33632613b/">Linkedin</a></h2>
 				<h2><a href="https://www.malt.fr/profile/teocasanova">Malt</a></h2>
-				<h2><a href="https://github.com/TeoCasanovaDW">Github</a></h2>
-				<h2><a href="#">Twitter</a></h2>				
+				<h2><a href="https://github.com/TeoCasanovaDW">Github</a></h2>				
 
 			</div>
 
 			<div id="icons" class="res">
 
-				
 				<a href="https://www.linkedin.com/in/t%C3%A9o-casanova-33632613b/"><i class="fab fa-linkedin"></i></a>
-
 				<a href="https://www.malt.fr/profile/teocasanova"><i class="fab fa-medium-m"></i></a>
-
-				<a href="#"><i class="fab fa-github"></i></a>
-
-				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="https://github.com/TeoCasanovaDW"><i class="fab fa-github"></i></a>
 
 			</div>
 

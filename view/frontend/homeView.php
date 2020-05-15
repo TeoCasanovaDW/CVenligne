@@ -16,7 +16,7 @@ ob_start();
 	
 	<div>
 		
-		<p>Bonjour, je vous souhaite la bienvenue sur mon CV en ligne ! Sur cette page d'accueil, vous pouvez retrouver une brève <a href="#desc">description de moi</a> ainsi que de mon parcours. Ensuite, sur la page <a href="index.php?action=formation">Formations & Diplomes</a>, vous retrouverez les formations que j'ai éffectuées. Le plus interressant se trouve sans aucun doute dans la page <a href="index.php?action=portfolio">Portfolio</a> où vous trouverez tout les projets auquels j'ai participé. Pour finir, vous disposez d'une page <a href="index.php?action=contact">Contact</a> si vous souhaitez me contacter</p>
+		<p>Bonjour, je vous souhaite la bienvenue sur mon CV en ligne ! Sur cette page d'accueil, vous pouvez retrouver une brève <a href="#desc">description de moi</a> ainsi que de mon parcours. Ensuite, sur la page <a href="index.php?action=formation">Formations</a>, vous retrouverez les formations que j'ai éffectuées. Le plus interressant se trouve sans aucun doute dans la page <a href="index.php?action=portfolio">Portfolio</a> où vous trouverez tout les projets auquels j'ai participé. Pour finir, vous disposez d'une page <a href="index.php?action=contact">Contact</a> si vous souhaitez me contacter</p>
 
 	</div>
 
