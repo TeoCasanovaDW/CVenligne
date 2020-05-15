@@ -12,31 +12,31 @@ $controller = new Controller();
 
 try{
 
-    if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'home') {
+    switch($_GET['action']){
+        case 'home':
             $controller->displayHomePage();
-        }
-        elseif($_GET['action'] == 'json'){
+        break;
+        case 'json':
             $controller->displayJsonPage();
-        }
-        elseif ($_GET['action'] == 'formation') {
+        break;
+        case 'formation':
         	$controller->displayFormationPage();
-        }
-        elseif ($_GET['action'] == 'portfolio') {
+        break;
+        case 'portfolio':
         	$controller->displayPortfolioPage();
-        }
-        elseif ($_GET['action'] == 'contact') {
+        break;
+        case 'contact':
         	$controller->displayContactPage();
-        }
-        elseif ($_GET['action'] == 'project') {
+        break;
+        case 'project':
             if ($_GET['p_id'] && $_GET['p_id'] > 0) {
                 $controller->displayTheProject();
             }
             else{
                 throw new Exception('Mauvais id de projet');
             }
-        }
-        elseif ($_GET['action'] == 'addComment') {
+        break;
+        case 'addComment':
             if ($_GET['p_id'] && $_GET['p_id'] > 0) {
                 if(!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['content'])){
                     $controller->addComment($_GET['p_id'], $_POST['name'], $_POST['firstname'], $_POST['content']);
@@ -48,47 +48,58 @@ try{
             else{
                 throw new Exception('Mauvais identifiant de projet');
             }
-        }
-        elseif($_GET['action'] == 'report'){
+        break;
+        case 'report':
             if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0){
                 $controller->reportComment();
             }
             else{
                 throw new Exception('pas d\'id de commentaire');
             }
-        }
-        elseif ($_GET['action'] == 'mail') {
+        break;
+        case 'mail':
             if ($_POST['nom'] && $_POST['objet'] && $_POST['message']) {
                 $controller->sendAMail();
             }
             else{
                 throw new Exception('Vous n\'avez pas rempli tout les champs');
             }
-        }
-        elseif($_GET['action'] == 'connexionPage'){
+        break;
+        case 'connexionPage':
             $controller->displayConnexionPage();
-        }
-        elseif($_GET['action'] == 'adminConnect'){
+        break;
+        case 'adminConnect':
             if ($_POST['user'] && $_POST['password']) {
                 $controller->getConnected();
             }
             else{
                 throw new Exception('Veuillez renseigner un identifiant et un mot de passe');
             }
-        }
+        break;
 
         /* ADMIN */
 
-        elseif (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) {
-
-            if ($_GET['action'] == 'adminPage') {
+        case 'adminPage':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 $controller->displayAdminPage();
             }
-            elseif ($_GET['action'] == 'deconnexion') {
+            else{
+                throw new Exception('Droits administrateurs requis');
+            }
+        break;
+
+        case 'deconnexion':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 $_SESSION['isLoggedIn'] = false;
                 $controller->displayHomePage();
             }
-            elseif ($_GET['action'] == 'createPost') {
+            else{
+                throw new Exception('Droits administrateurs requis');
+            }                
+        break;
+
+        case 'createPost':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 if (!empty($_POST['titleCreated']) && !empty($_POST['project_link']) && !empty($_POST['desc']) && !empty($_POST['skills']) && isset($_FILES['image']) && $_FILES['image']['error'] == 0){
                     if ($_FILES['image']['size'] < 1000000) {
                         $infosfichier = pathinfo($_FILES['image']['name']);
@@ -111,7 +122,13 @@ try{
                     throw new Exception('Veuillez renseigner tout les champs disponibles');
                 }
             }
-            elseif ($_GET['action'] == 'adminUpdatePage') {
+            else{
+                throw new Exception('Droits administrateurs requis');
+            } 
+        break;
+
+        case 'adminUpdatePage':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 if (isset($_GET['p_id'])) {
                     $controller->displayProjectToUpdate();
                 }
@@ -119,7 +136,13 @@ try{
                     throw new Exception('pas d\'identifiant de projet');
                 }
             }
-            elseif ($_GET['action'] == 'updateProject'){
+            else{
+                throw new Exception('Droits administrateurs requis');
+            } 
+        break;
+
+        case 'updateProject':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 if (!empty($_POST['titleUpdated']) && !empty($_POST['project_linkUpdated']) && !empty($_POST['descUpdated']) && !empty($_POST['skillsUpdated']) && isset($_FILES['imageUpdated']) && $_FILES['imageUpdated']['error'] == 0){
                     if (isset($_GET['p_id'])) {
                         if ($_FILES['imageUpdated']['size'] < 1000000) {
@@ -147,7 +170,13 @@ try{
                     throw new Exception('Veuillez renseigner un titre et un contenu');
                 }
             }
-            elseif ($_GET['action'] == 'deleteProject') {
+            else{
+                throw new Exception('Droits administrateurs requis');
+            }
+        break;
+
+        case 'deleteProject':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 if (isset($_GET['p_id'])) {
                     $controller->deleteProject();
                 }
@@ -155,7 +184,13 @@ try{
                     throw new Exception('pas d\'identifiant de projet détecté');
                 }
             }
-            elseif ($_GET['action'] == 'commentEditor') {
+            else{
+                throw new Exception('Droits administrateurs requis');
+            }
+        break;
+
+        case 'commentEditor':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
                     $controller->displayCommentEditor();
                 }
@@ -163,7 +198,13 @@ try{
                     throw new Exception('pas d\'identifiant de commentaire');
                 }
             }
-            elseif ($_GET['action'] == 'editComment') {
+            else{
+                throw new Exception('Droits administrateurs requis');
+            }
+        break;
+
+        case 'editComment':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 if (isset($_GET['comment_id']) && $_GET['comment_id'] > 0) {
                     if (!empty($_POST['newComment'])) {
                         $controller->editComment($_POST['newComment']);
@@ -176,7 +217,13 @@ try{
                     throw new Exception('aucun identifiant de commentaire envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'removeReport') {
+            else{
+                throw new Exception('Droits administrateurs requis');
+            }
+        break;
+
+        case 'removeReport':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 if($_GET['comment_id']){
                     $controller->removeReport();
                 }
@@ -184,19 +231,21 @@ try{
                     throw new Exception('impossible d\'enlever le report');
                 }
             }
-            elseif ($_GET['action'] == 'deleteComment') {
+            else{
+                throw new Exception('Droits administrateurs requis');
+            }
+        break;
+
+        case 'deleteComment':
+            if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 $controller->deleteComment();
             }
             else{
-                throw new Exception('Cette page n\'existe pas');
+                throw new Exception('Droits administrateurs requis');
             }
+        break;
 
-        }
-        else{
-        	throw new Exception('Page indisponible');
-        }
-    }
-    else{
+    default:
         $controller->displayHomePage();
     }
         
