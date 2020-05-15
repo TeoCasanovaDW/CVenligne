@@ -47,9 +47,14 @@ class Controller
 
     public function createProject(){
         $adminManager = new AdminManager();
-        $createdProject = $adminManager->createProject($_POST['titleCreated'], $_POST['project_link'], $_POST['desc'], $_POST['image']);
+        $createdProject = $adminManager->createProject($_POST['titleCreated'], $_POST['project_link'], $_POST['desc'], $_POST['skills'], $_FILES['image']['name']);
 
-        header('Location: index.php?action=adminPage');
+        if($createdProject){
+            header('Location: index.php?action=adminPage');
+        }
+        else{
+            throw new \Exception("Impossible d'ajouter le projet");
+        }
     }
 
     public function displayProjectToUpdate(){
@@ -66,9 +71,13 @@ class Controller
 
     public function updateProject(){
         $adminManager = new AdminManager();
-        $updateProject = $adminManager->updateProject($_POST['titleUpdated'], $_POST['project_linkUpdated'], $_POST['descUpdated'], $_POST['imageUpdated'], $_GET['p_id']);
-
-        header('Location: index.php?action=adminPage');
+        $updateProject = $adminManager->updateProject($_POST['titleUpdated'], $_POST['project_linkUpdated'], $_POST['descUpdated'], $_POST['skillsUpdated'], $_FILES['imageUpdated']['name'], $_GET['p_id']);
+        if ($updateProject) {
+            header('Location: index.php?action=adminPage');
+        }
+        else{
+            throw new \Exception("Error");
+        }
     }
 
     public function deleteProject(){
@@ -96,7 +105,7 @@ class Controller
 
         $reportedComment = $commentManager->reportComment($_GET['comment_id']);
 
-        header('Location: index.php?action=home');
+        require('./view/frontend/confirmReportedCommentView.php');
     }
 
     public function displayCommentEditor(){

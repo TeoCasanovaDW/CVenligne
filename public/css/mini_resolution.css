@@ -3,6 +3,7 @@ h3{
 }
 
 h4{
+	margin: 0 auto;
 	width: 75%;
 }
 
@@ -109,7 +110,3 @@ header nav i{
 	margin: 0px;
 	order: 2;
 }
-
-
-/*FORMATION*/
-

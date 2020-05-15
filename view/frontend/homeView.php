@@ -2,7 +2,7 @@
 
 $title = 'Accueil';
 
-$style = 'rel="stylesheet" type="text/css" href="./public/css/styleHomeView.css" id="feuilleDeStyle"';
+$style = 'rel="stylesheet" type="text/css" href="./public/css/styleHomeView.css"';
 
 $subtitle = 'Accueil';
 

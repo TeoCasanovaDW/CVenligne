@@ -8,8 +8,6 @@ require ('Autoloader/Autoloader.php');
 use \Teo\CVenligne\autoloader\Autoloader;
 Autoloader::register();
 
-/*require ('controller/Controller.php');*/
-
 $controller = new Controller();
 
 try{
@@ -91,8 +89,23 @@ try{
                 $controller->displayHomePage();
             }
             elseif ($_GET['action'] == 'createPost') {
-                if (!empty($_POST['titleCreated']) && !empty($_POST['project_link']) && !empty($_POST['desc']) && !empty($_POST['image'])) {
-                    $controller->createProject();
+                if (!empty($_POST['titleCreated']) && !empty($_POST['project_link']) && !empty($_POST['desc']) && !empty($_POST['skills']) && isset($_FILES['image']) && $_FILES['image']['error'] == 0){
+                    if ($_FILES['image']['size'] < 1000000) {
+                        $infosfichier = pathinfo($_FILES['image']['name']);
+                        $extension_upload = $infosfichier['extension'];
+                        $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
+                        if (in_array($extension_upload, $extensions_autorisees)){
+                            move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . basename($_FILES['image']['name']));
+                            $controller->createProject();
+                        }
+                        else{
+                            throw new Exception('Le fichier ne contient pas la bonne extension');
+                        }
+                    }
+                    else{
+                        throw new Exception('Le fichier sélectionné est trop volumineux');
+                    }
+                    
                 }
                 else{
                     throw new Exception('Veuillez renseigner tout les champs disponibles');
@@ -103,16 +116,31 @@ try{
                     $controller->displayProjectToUpdate();
                 }
                 else{
-                    throw new Exception('pas d\'identifiant de billet');
+                    throw new Exception('pas d\'identifiant de projet');
                 }
             }
             elseif ($_GET['action'] == 'updateProject'){
-                if (!empty($_POST['titleUpdated']) && !empty($_POST['project_linkUpdated']) && !empty($_POST['descUpdated']) && !empty($_POST['imageUpdated'])) {
+                if (!empty($_POST['titleUpdated']) && !empty($_POST['project_linkUpdated']) && !empty($_POST['descUpdated']) && !empty($_POST['skillsUpdated']) && isset($_FILES['imageUpdated']) && $_FILES['imageUpdated']['error'] == 0){
                     if (isset($_GET['p_id'])) {
-                        $controller->updateProject();
+                        if ($_FILES['imageUpdated']['size'] < 1000000) {
+                            $infosfichier = pathinfo($_FILES['imageUpdated']['name']);
+                            $extension_upload = $infosfichier['extension'];
+                            $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
+                            if (in_array($extension_upload, $extensions_autorisees)){
+                                move_uploaded_file($_FILES['imageUpdated']['tmp_name'], 'uploads/' . basename($_FILES['imageUpdated']['name']));
+                                $controller->updateProject();
+                            }
+                            else{
+                                throw new Exception('Le fichier ne contient pas la bonne extension');
+                            }
+                        }
+                        else{
+                            throw new Exception('Le fichier sélectionné est trop volumineux');
+                        }
+                        
                     }
                     else{
-                        throw new Exception('pas d\'identifiant de billet');
+                        throw new Exception('pas d\'identifiant de projet');
                     }
                 }
                 else{
@@ -124,7 +152,7 @@ try{
                     $controller->deleteProject();
                 }
                 else{
-                    throw new Exception('pas d\'identifiant de billet détecté');
+                    throw new Exception('pas d\'identifiant de projet détecté');
                 }
             }
             elseif ($_GET['action'] == 'commentEditor') {
@@ -164,9 +192,6 @@ try{
             }
 
         }
-
-
-        
         else{
         	throw new Exception('Page indisponible');
         }

@@ -1,19 +1,26 @@
 /* FORMATIONS / DIPLÔMES */
 
 #formation {
-	height: 1350px;
+	height: auto;
 	margin-top: 0px;
-	padding: 100px 0;
 }
 
 #container {
-	margin: 0 auto 150px auto;
-	padding: 20px;
+	padding: 150px 0;
 }
 
 .formations {
 	display: flex;
-	padding: 20px;
+	flex-direction: column;
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #FFF;
+	padding: 25px;
+	text-align: center;
+}
+
+.formations:first-child{
+	margin-bottom: 50px;
 }
 
 #formation h4 {
@@ -25,11 +32,6 @@
 #formation p {
 	font-size: 1.2em;
 	width: 65%;
-	margin: 0 auto;
-}
-
-#diplome {
-	height: 200px;
 	margin: 0 auto;
 }
 

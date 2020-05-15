@@ -52,7 +52,7 @@
 		<ul id="nav-ul">
 
 			<li class="nav-li"><a href="index.php?action=home" class="scroll nav-a">Accueil</a></li>
-			<li class="nav-li"><a href="index.php?action=formation" class="scroll nav-a">Formations & Diplômes</a></li>
+			<li class="nav-li"><a href="index.php?action=formation" class="scroll nav-a">Formations</a></li>
 			<li class="nav-li"><a href="index.php?action=portfolio" class="scroll nav-a">Portfolio</a></li>
 			<li class="nav-li"><a href="index.php?action=contact" class="scroll nav-a">Contact</a></li>
 			<li class="nav-li"><a class="nav-a" href="index.php?action=<?php
@@ -89,8 +89,6 @@
             ?>">Déconnexion</a></li>
 
 		</ul>
-
-		<!-- <div id="switch"><div id="switchRound"></div></div> -->
 
 		<i class="fas fa-bars"></i>
 
@@ -187,7 +185,7 @@
 
 </div>
 
-<script type="text/javascript" src="./public/js/index.js"></script>
+<script src="./public/js/index.js"></script>
 
 <?= $content ?>
 

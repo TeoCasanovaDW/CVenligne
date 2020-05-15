@@ -1,5 +1,5 @@
 <?php
-
+ 
 $title = 'Administration';
 
 $style = 'rel="stylesheet" type="text/css" href="./public/css/styleAdminView.css"';
@@ -14,19 +14,22 @@ ob_start();
 
 	<h3 class="sous-titre">Créer un projet</h3>
 
-	<form id="formCreatePost" action="index.php?action=createPost" method="post">
+	<form id="formCreatePost" action="index.php?action=createPost" method="post" enctype="multipart/form-data">
 
 		<label for="title">Titre :</label>
-		<input type="text" name="titleCreated"/>
+		<input type="text" name="titleCreated" id="titleCreated" />
 		<br>
 		<label for="project_link">Lien du projet :</label>
-		<input type="text" name="project_link"/>
+		<input type="text" name="project_link" id="project_link" />
 		<br>
 		<label for="desc">Description :</label>
-		<textarea type="text" name="desc" class="mytextarea"></textarea>
+		<textarea type="text" name="desc" id="desc"></textarea>
 		<br>
-		<label>Image :</label>
-		<input type="file" name="image"/>
+		<label for="skills">Compétences :</label>
+		<input type="text" name="skills" id="skills">
+		<br>
+		<label for="image">Image :</label>
+		<input type="file" name="image" id="image" />
 		<input type="submit" name="valider">
 
 	</form>
@@ -45,7 +48,7 @@ while ($data = $project->fetch()):
 
 		<a href="<?= $data['project_link'] ?>">
 
-			<img src="<?= $data['img'] ?>" />
+			<img src="./public/portfolio/<?= $data['img'] ?>" />
 
 		</a>
 
@@ -73,7 +76,7 @@ endwhile;
 			if ($comment['report'] > 0):
 		?>
 
-			<h4>Billet n°<?= htmlspecialchars($comment['project_id']) ?> : </h4>
+			<h4>Projet n°<?= htmlspecialchars($comment['project_id']) ?> : </h4>
 
 			<p>
 				<?= 'De <strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $comment['creation_date'] . ' :<br><p id="com">' . htmlspecialchars($comment['content']) . '</p>'?>

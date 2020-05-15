@@ -4,7 +4,7 @@ $title = 'Formation/Diplome';
 
 $style = 'rel="stylesheet" type="text/css" href="./public/css/styleFormationDiplomeView.css"';
 
-$subtitle = 'Formation / Diplomes';
+$subtitle = 'Formation';
 
 ob_start();
 
@@ -30,8 +30,6 @@ ob_start();
 		</div>
 
 	</div>
-
-	<div id="diplome" class="text"></div>
 
 </section>
 

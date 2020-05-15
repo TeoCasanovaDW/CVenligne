@@ -31,6 +31,12 @@
 	color: #103049;
 }
 
+#create #image{
+	color: #FFF;
+	border: 1px solid #FFF;
+	text-align: center;
+}
+
 #create input:last-child{
 	width: 25%;
 	padding: 5px;
@@ -57,6 +63,7 @@ h3{
 	background-color: #103049;
 	margin-top: 5px;
 }
+
 article{
 	flex: 1;
 	width: 65%;
@@ -77,11 +84,16 @@ article a:first-child{
 	margin-bottom: 20px;
 }
 
+#projets article img{
+	max-width: 100%;
+}
+
 .content{
 	flex: 1.5;
 	background-color: #103049;
-	padding: 25px;
+	padding: 25px 0;
 	border-top: 1px solid #FFF;
+	width: 100%;
 }
 
 #updateLink{

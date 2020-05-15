@@ -93,6 +93,12 @@ article a:last-child:hover{
 	padding: 10px;
 }
 
+#formUpdatePost #imageUpdated{
+	color: #FFF;
+	border: 1px solid #FFF;
+	text-align: center;
+}
+
 #formUpdatePost label{
 	text-decoration: underline;
 }

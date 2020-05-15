@@ -12,31 +12,33 @@ ob_start();
 
 <section id="oldProject">
 
-	<h3>Ancien billet :</h3>
+	<h3>Ancien projet :</h3>
 		
 	<h3 id="projectTitle"><?= htmlspecialchars($displayProjectToUpdate['title']) ?></h3>
 
 	<article>
 
-		
-
 		<a href="<?= $displayProjectToUpdate['project_link'] ?>">
 
-			<img src="<?= $displayProjectToUpdate['img'] ?>" />
+			<img src="./public/portfolio/<?= $displayProjectToUpdate['img'] ?>" />
 
 		</a>
 
 		<div class="content"><?= htmlspecialchars($displayProjectToUpdate['description']) ?></div>
 
+		<h5 class="skills">Compétences :</h5>
+
+		<div class="skills"><?= $displayProjectToUpdate['skills'] ?></div>
+ 
 	</article>
 
 </section>
 
 <div id="update">
 
-	<h3>Nouveau billet :</h3>
+	<h3>Nouveau projet :</h3>
 
-	<form id="formUpdatePost" action="index.php?action=updateProject&amp;p_id=<?= $displayProjectToUpdate['id'] ?>" method="post">
+	<form id="formUpdatePost" action="index.php?action=updateProject&amp;p_id=<?= $displayProjectToUpdate['id'] ?>" method="post" enctype="multipart/form-data">
 
 		<label for="title">Titre :</label>
 		<input type="text" name="titleUpdated" value="<?= $displayProjectToUpdate['title'] ?>"/>
@@ -47,8 +49,11 @@ ob_start();
 		<label for="desc">Description :</label>
 		<textarea type="text" name="descUpdated" class="mytextarea" value="<?= $displayProjectToUpdate['description'] ?>"></textarea>
 		<br>
+		<label for="skills">Compétences :</label>
+		<input type="text" name="skillsUpdated" id="skillsUpdated" value="<?= $displayProjectToUpdate['skills'] ?>">
+		<br>
 		<label>Image :</label>
-		<input type="file" name="imageUpdated" id="file" />
+		<input type="file" name="imageUpdated" id="imageUpdated"/>
 		<input type="submit" name="valider">
 
 	</form>
